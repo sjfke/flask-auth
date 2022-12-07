@@ -13,6 +13,7 @@ def create_app():
     #  python -c 'import secrets; print(secrets.token_hex())'
     app.config['SECRET_KEY'] = '0860211d075937aad203b0d724c80895377511d1ded661d3ffa926770bdee0e4'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    # engine = sqlalchemy.create_engine("mariadb+mariadbconnector://app_user:Password123!@127.0.0.1:3306/company")
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
