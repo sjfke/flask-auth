@@ -23,14 +23,15 @@ RUN pip install --no-cache-dir -r requirements.txt && rm /tmp/requirements.txt
 
 # COPY ./<builder_folder>/ /usr/src/app
 WORKDIR /usr/src/app
-RUN mkdir /usr/src/app/instance
 
 # COPY config.py ./
 # COPY static/ ./static/
 COPY project/__init__.py ./project/
 COPY project/auth.py ./project/
 COPY project/main.py ./project/
+COPY project/models.py ./project/
 COPY project/templates/ ./project/templates/
+COPY project/instance/ ./project/instance/
 COPY gunicorn.config.py ./
 
 
@@ -47,3 +48,4 @@ EXPOSE ${PORT}
 
 # "Application Factory” Pattern: gunicorn --workers=2 'project:create_app()', see project/__init__.py
 CMD gunicorn -b 0.0.0.0:${PORT} 'project:create_app()'
+# CMD tail -F /dev/null # docker run -it flask-auth-web /bin/sh
