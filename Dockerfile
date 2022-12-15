@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.10-alpine
 # Change User to perform privileged actions
 USER 0
 # TODO: Rename the builder environment variable to inform users about application you provide them
@@ -33,7 +33,6 @@ COPY project/models.py ./project/
 COPY project/templates/ ./project/templates/
 COPY project/instance/ ./project/instance/
 COPY gunicorn.config.py ./
-
 
 # COPY flask-web-config.json /etc/flask/web-config.json
 
