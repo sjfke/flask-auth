@@ -8,7 +8,7 @@ services:
       - project_network
 
   # Use root/example as user/password credentials
-  db:
+  authdb:
     image: mariadb
     restart: unless-stopped
     environment:
