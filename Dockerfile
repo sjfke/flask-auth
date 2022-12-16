@@ -30,8 +30,8 @@ COPY project/__init__.py ./project/
 COPY project/auth.py ./project/
 COPY project/main.py ./project/
 COPY project/models.py ./project/
+COPY project/static/ ./project/static/
 COPY project/templates/ ./project/templates/
-COPY project/instance/ ./project/instance/
 COPY gunicorn.config.py ./
 
 # COPY flask-web-config.json /etc/flask/web-config.json
