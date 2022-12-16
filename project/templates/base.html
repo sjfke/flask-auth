@@ -21,38 +21,38 @@
 </head>
 
 <body class="bg-primary">
-<section class="container bg-primary">
-    <div class="card bg-primary">
-        <div class="card-header bg-info">
-            <nav class="nav navbar-expand-md">
-                <div class="container-fluid">
-                    <ul class="nav nav-pills justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
-                        </li>
-                        {% if current_user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('main.profile') }}">Profile</a>
-                        </li>
-                        {% endif %}
-                        {% if not current_user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
-                        </li>
-                        {% endif %}
-                        {% if current_user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
-                        </li>
-                        {% endif %}
-                    </ul>
+<div class="container bg-primary">
 
-                </div>
-            </nav>
-        </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+            </li>
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.profile') }}">Profile</a>
+            </li>
+            {% endif %}
+            {% if not current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
+            </li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+            </li>
+            {% endif %}
+        </ul>
+
+
+    </nav>
+
+    <div class="card bg-primary">
 
         <div class="card-body bg-primary">
             <div>
@@ -63,7 +63,7 @@
 
     </div>
 
-</section>
+</div>
 </body>
 
 </html>
