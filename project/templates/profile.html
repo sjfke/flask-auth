@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h4>
-    Profile
-</h4>
+<h4>Profile</h4>
 <hr class="border border-danger border-2 opacity-50">
 
-<h5>
-  Welcome, {{ name }}!
-</h5>
+<h5>Welcome to Flask Authentication</h5>
+<ul>
+    <li>Email: {{ email }}</li>
+    <li>Name: {{ name }}</li>
+    <li>CIF: {{ cif }}</li>
+</ul>
 {% endblock %}
